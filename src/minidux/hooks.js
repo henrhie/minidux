@@ -11,10 +11,7 @@ export const useStore = () => {
 };
 
 export const useDispatch = () => {
-  const store = useContext(miniduxContext);
-  if (!store) {
-    throw new Error('store was not provided to provider');
-  }
+  const store = useStore()
   return store.dispatch;
 };
 
