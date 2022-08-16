@@ -1,7 +1,7 @@
 
 # Minidux - Redux from scratch
 
-Built in a attempt to understand global state management packages for React.
+An attempt to understand global state management packages for React.
 
 [Try on StackBlitz ⚡️](https://stackblitz.com/edit/react-ljxzp2)
 
