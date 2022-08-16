@@ -2,7 +2,7 @@ export const bindActionCreator = (dispatch, actionCreator) => {
   if (typeof actionCreator !== 'function') {
     throw new Error('action creator must be of type function');
   }
-  return (...args) => {
+  return (this, ...args) => {
     dispatch(actionCreator.apply(this, args));
   };
 };
