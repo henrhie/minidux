@@ -40,6 +40,27 @@ Built in a attempt to understand global state management packages for React.
 | :-------- | :------- | :------------------------- |
 | `actionCreators && dispatch` | `ActionCreators: { [key: any]: Function } && dispatch: Function` | binds several action creators to the minidux store |
 
+#### store.subscribe()
+
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `listener function` | `Function` | add subscription for a listener function which is invoked when the store is mutated |
+
+#### store.dispatch(listener)
+
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `action` | `object with required field, 'type'` | dispatches an action to mutate store. Only way to mutate store |
+
+#### store.getState()
+
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `n/a` | `n/a'` | returns the current state of store |
+
 #### hooks
 
 
