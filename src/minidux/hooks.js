@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { useSyncExternalStoreWithSelector } from 'use-sync-external-store/with-selector';
+import { useContext, useState, useEffect } from 'react';
 import { miniduxContext } from './context';
 
 export const useStore = () => {
@@ -11,17 +10,18 @@ export const useStore = () => {
 };
 
 export const useDispatch = () => {
-  const store = useStore()
+  const store = useStore();
   return store.dispatch;
 };
 
 export const useSelector = (selector) => {
   const store = useStore();
+  const [state, setState] = useState(selector(store.getState()));
 
-  return useSyncExternalStoreWithSelector(
-    store.subscribe,
-    store.getState,
-    store.getState,
-    selector
-  );
+  useEffect(() => {
+    const unsubscribe = store.subscribe((state) => setState(selector(state)));
+    return () => unsubscribe();
+  }, []);
+
+  return state;
 };

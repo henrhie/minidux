@@ -25,7 +25,7 @@ function createStore(reducer, initialState) {
 
     currentState = currentReducer(currentState, action);
     dispatching = false;
-    listeners.forEach((listener) => listener());
+    listeners.forEach((listener) => listener(currentState));
     return action;
   }
 
