@@ -5,7 +5,6 @@ An attempt to understand global state management packages for React.
 
 [Try on StackBlitz ⚡️](https://stackblitz.com/edit/react-ljxzp2)
 
-!!! Minidux uses the use-sync-external-store package to sync the store with your React Application and prevent tearing during concurrent rendering.
 
 
 ## API Reference
